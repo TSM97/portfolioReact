@@ -8,11 +8,11 @@ export default function Model({ mouse }) {
   return (
     <Float>
       <group>
-        <Mesh node={nodes.center} mouse={mouse} multiplier={3} />
-        <Mesh node={nodes.Torus_2} mouse={mouse} multiplier={1.5} />
-        <Mesh node={nodes.topTorus} mouse={mouse} multiplier={2} />
-        <Mesh node={nodes.bottomTorus} mouse={mouse} multiplier={3.5} />
-        <Mesh node={nodes.Torus} mouse={mouse} multiplier={2.2} />
+        <Mesh node={nodes.center} mouse={mouse} multiplier={1.2} />
+        <Mesh node={nodes.Torus_2} mouse={mouse} multiplier={2} />
+        <Mesh node={nodes.topTorus} mouse={mouse} multiplier={0} />
+        <Mesh node={nodes.bottomTorus} mouse={mouse} multiplier={0} />
+        <Mesh node={nodes.Torus} mouse={mouse} multiplier={2.5} />
       </group>
     </Float>
   );
