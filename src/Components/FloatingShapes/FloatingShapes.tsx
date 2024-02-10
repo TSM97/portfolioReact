@@ -14,7 +14,7 @@ export default function FloatingShapes() {
     y: useSpring(mouse.y, { stiffness: 75, damping: 100, mass: 3 }),
   };
 
-  const manageMouseMove = (e) => {
+  const manageMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
     const x = clientX / innerWidth;
@@ -32,8 +32,8 @@ export default function FloatingShapes() {
     <Canvas
       orthographic
       camera={{ position: [0, 0, 500], zoom: 2 }}
-      className="left-1/3"
-      style={{ position: "absolute", height: "65%", width: "70%" }}
+      className="left-1/3 "
+      style={{ position: "absolute", height: "65%", width: "65%" }}
     >
       <Model mouse={smoothMouse} />
       <Environment preset="studio" />
