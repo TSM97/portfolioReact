@@ -1,4 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
+
+// Not yet fixed!
 
 export default function Line() {
   const path = useRef(null);
@@ -13,8 +15,8 @@ export default function Line() {
     const { innerWidth } = window;
     const width = innerWidth;
     path.current.setAttributeNS(
-      '',
-      'd',
+      "",
+      "d",
       `M0 50 Q${width / 2} ${50 + progress}, ${width} 50`
     );
   };
@@ -37,18 +39,18 @@ export default function Line() {
   };
 
   return (
-    <div className='flex justify-center items-center'>
-      <div className='h-[1px] mb-5 w-[90dvw] relative'>
+    <div className="flex justify-center items-center">
+      <div className="h-[1px] mb-5 w-[90dvw] relative">
         <div
-          className='h-10 border border-red-500 relative z-10 top-16'
+          className="h-10 border border-red-500 relative z-10 top-16"
           onMouseMove={(e) => {
             manageMouseMove(e);
           }}
           onMouseLeave={manageMouseLeave}
         ></div>
-        <svg className='w-full h-[50px] absolute'>
+        <svg className="w-full h-[50px] absolute">
           <path
-            className='stroke-foreground stroke-1 fill-none'
+            className="stroke-foreground stroke-1 fill-none"
             ref={path}
           ></path>
         </svg>
