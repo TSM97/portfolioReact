@@ -1,12 +1,16 @@
-import Line from './Components/Line';
+import Line from "./Components/Line";
+import MaskCursor from "./Components/MaskCursor";
 
 function About() {
   return (
-    <main className='min-h-[100dvh] min-w-screen'>
-      <Line />
-      <div></div>
-      <div></div>
-    </main>
+    <>
+      <section className="min-h-[20dvh] min-w-screen">
+        <Line />
+      </section>
+      <section className="min-h-[80dvh] w-screen">
+        <MaskCursor />
+      </section>
+    </>
   );
 }
 
