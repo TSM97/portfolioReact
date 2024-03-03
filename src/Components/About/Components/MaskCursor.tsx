@@ -1,22 +1,30 @@
-import { backIn, backInOut, backOut, motion } from "framer-motion";
+import { backOut, motion } from "framer-motion";
 import useMousePosition from "../hooks/useMousePosition";
 import { useState } from "react";
+import "../mask.css";
 
 export default function MaskCursor() {
   const [isHovered, setIsHovered] = useState(false);
-  const { x, y } = useMousePosition();
+  const [start, setStart] = useState(false);
+  const { x, y } = useMousePosition(start);
   const size = isHovered ? 400 : 40;
+  console.log("gaaaamta");
   return (
-    <main className="flex flex-col items-center text-5xl text-center px-[10%] pt-[10vh]">
+    <main
+      className="text-5xl text-center"
+      onMouseEnter={() => setStart(true)}
+      onMouseLeave={() => setStart(false)}
+    >
       <motion.div
-        className="mask w-full h-full text-red"
+        className="mask flex items-center justify-center cursor-default w-full h-[50dvh] pt-[5dvh] absolute"
         animate={{
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           WebkitMaskSize: `${size}px`,
         }}
-        transition={{ tpye: "tween", ease: backOut, duration: 0.5 }}
+        transition={{ type: "tween", ease: backOut, duration: 0.5 }}
       >
         <p
+          className="px-[10dvw] w-3/4"
           onMouseEnter={() => {
             setIsHovered(true);
           }}
@@ -29,10 +37,11 @@ export default function MaskCursor() {
           facere.
         </p>
       </motion.div>
-      <div className="body w-1/2">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed suscipit,
-          doloribus cumque qui natus reiciendis ab voluptatum ratione.
+      <div className=" flex items-center justify-center cursor-default w-full  h-[50dvh] pt-[5dvh]">
+        <p className=" px-[10dvw] w-3/4">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
+          dignissimos tenetur qui autem perspiciatis debitis numquam veritatis
+          facere.
         </p>
       </div>
     </main>
