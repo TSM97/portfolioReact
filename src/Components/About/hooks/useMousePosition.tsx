@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 
-export default function useMousePosition(elementRef, isInside) {
+export default function useMousePosition(
+  elementRef: React.MutableRefObject<null>,
+  isInside: boolean
+) {
   const [mousePosition, setMousePosition] = useState<{
-    x: null | number;
-    y: null | number;
+    x: number | null;
+    y: number | null;
   }>({ x: null, y: null });
 
   useEffect(() => {
