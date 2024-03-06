@@ -13,16 +13,16 @@ export default function Line() {
     setPath(progress);
   }, []);
 
-  const setPath = (progress) => {
+  const setPath = (progress: number) => {
     const width = window.innerWidth * 0.9;
     path.current.setAttributeNS(
-      null,
+      '',
       'd',
       `M0 250 Q${width * x} ${250 + progress}, ${width} 250`
     );
   };
 
-  const lerp = (x, y, a) => x * (1 - a) + y * a;
+  const lerp = (x: number, y: number, a: number) => x * (1 - a) + y * a;
 
   const manageMouseEnter = () => {
     if (reqId) {

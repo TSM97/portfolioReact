@@ -20,7 +20,8 @@ export default function MaskCursor() {
       onMouseLeave={() => setIsInside(false)}
     >
       <motion.div
-        className='mask flex items-center justify-center cursor-default w-full h-[100dvh] pt-[5dvh] absolute'
+        className='mask flex items-center justify-center cursor-default w-full h-[100dvh] absolute'
+        // Pt-[5dvh] for default font-family, in order to be aligned
         animate={{
           WebkitMaskPosition: `${x && x - size / 2}px ${y && y - size / 2}px`,
           WebkitMaskSize: `${isInside ? size : 0}px`,
