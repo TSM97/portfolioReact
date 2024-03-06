@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 // Not yet fixed!
 
@@ -16,8 +16,8 @@ export default function Line() {
   const setPath = (progress: number) => {
     const width = window.innerWidth * 0.9;
     path.current.setAttributeNS(
-      '',
-      'd',
+      "",
+      "d",
       `M0 250 Q${width * x} ${250 + progress}, ${width} 250`
     );
   };
@@ -60,13 +60,13 @@ export default function Line() {
     progress = 0;
   };
 
-  console.log('asdasdasd');
+  console.log("asdasdasd");
 
   return (
-    <div className='flex justify-center items-center'>
-      <div className='h-[1px] mb-5 w-[90dvw] relative'>
+    <div className="flex justify-center items-center">
+      <div className="h-[1px] mb-5 w-[90dvw] relative">
         <div
-          className='h-12 relative z-10 top-16'
+          className="h-12 relative z-10 top-16"
           onMouseEnter={() => {
             manageMouseEnter();
           }}
@@ -77,17 +77,17 @@ export default function Line() {
             manageMouseLeave();
           }}
         ></div>
-        <div className='flex justify-center items-center'>
-          <div className='pr-2'>{'<'}</div>
-          <div className='text-center font-light border-1 border-foreground-600 rounded-md text-foreground-800 px-2 py-1 text-lg'>
+        <div className="flex justify-center items-center">
+          <div className="pr-2">{"<"}</div>
+          <div className="text-center font-light border-1 border-foreground-600 rounded-md text-foreground-800 px-2 py-1 text-lg">
             Keep Scrolling
           </div>
-          <div className='pl-2'>{'>'}</div>
+          <div className="pl-2">{">"}</div>
         </div>
 
-        <svg className='w-full h-[300px] absolute -top-[9.5rem]'>
+        <svg className="w-full h-[300px] absolute -top-[9.5rem]">
           <path
-            className='stroke-foreground stroke-1 fill-none'
+            className="stroke-foreground stroke-1 fill-none"
             ref={path}
           ></path>
         </svg>
