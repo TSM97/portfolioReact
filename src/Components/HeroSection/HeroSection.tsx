@@ -15,9 +15,9 @@ function HeroSection() {
                   // Same substring at the start will only be typed out once, initially
                   "Giannis",
                   1000,
-                  "Front-End Developer",
+                  "A Front-End Developer",
                   1000,
-                  "UI/UX Designer",
+                  "A UI/UX Designer",
                   1000,
                 ]}
                 wrapper="span"

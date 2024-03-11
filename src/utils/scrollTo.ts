@@ -1,6 +1,7 @@
-export default function scrollTo(elementRef: unknown) {
+export default function scrollTo(elementId: string) {
+  console.log("patisa koympi");
   window.scrollTo({
-    top: elementRef.current.offsetTop,
-    behavior: 'smooth',
+    top: document?.getElementById(elementId)?.offsetTop,
+    behavior: "smooth",
   });
 }

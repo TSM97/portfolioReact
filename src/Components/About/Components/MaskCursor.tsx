@@ -16,7 +16,7 @@ export default function MaskCursor() {
     <main
       ref={elementRef}
       className="lg:text-5xl md:text-3xl sm:text-xl text-medium text-center"
-      onMouseEnter={() => setIsInside(true)}
+      onMouseMove={() => setIsInside(true)}
       onMouseLeave={() => setIsInside(false)}
     >
       <motion.div
@@ -34,7 +34,7 @@ export default function MaskCursor() {
         }}
       >
         <p
-          className="px-[10dvw] w-3/4 text-"
+          className="mx-[10dvw] w-3/4 text-"
           onMouseEnter={() => {
             setIsHovered(true);
           }}
@@ -49,7 +49,7 @@ export default function MaskCursor() {
         </p>
       </motion.div>
       <div className=" flex items-center justify-center cursor-default w-full h-[100dvh]">
-        <p className=" px-[10dvw] w-3/4">
+        <p className=" mx-[10dvw] w-3/4">
           My <span className="text-[#e33d30]">passion for programming</span>{" "}
           extends far beyond the confines of the workweek. During my free time,
           you'll often find me diving deep into various coding projects,

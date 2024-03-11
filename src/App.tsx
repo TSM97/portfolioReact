@@ -11,7 +11,9 @@ function App() {
       <NavBar />
       <FloatingShapes />
       <HeroSection />
-      <About />
+      <section id="About">
+        <About />
+      </section>
       <Skills />
     </>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import scrollTo from "../../utils/scrollTo";
 
 // Not yet fixed!
 
@@ -60,8 +61,6 @@ export default function Line() {
     progress = 0;
   };
 
-  console.log("asdasdasd");
-
   return (
     <div className="flex justify-center items-center">
       <div className="h-[1px] mb-5 w-[90dvw] relative">
@@ -79,7 +78,10 @@ export default function Line() {
         ></div>
         <div className="flex justify-center items-center">
           <div className="pr-2">{"<"}</div>
-          <div className="text-center font-light border-1 border-foreground-600 rounded-md text-foreground-800 px-2 py-1 text-lg">
+          <div
+            onClick={() => scrollTo("About")}
+            className="text-center font-light border-1 border-foreground-600 rounded-md text-foreground-800 px-2 py-1 text-lg z-20 cursor-pointer"
+          >
             Keep Scrolling
           </div>
           <div className="pl-2">{">"}</div>
