@@ -1,6 +1,6 @@
-import { backOut, motion } from 'framer-motion';
+import { backOut, motion, useMotionTemplate } from 'framer-motion';
 import useMousePosition from '../hooks/useMousePosition';
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import '../mask.css';
 
 export default function MaskCursor() {
@@ -9,6 +9,13 @@ export default function MaskCursor() {
   const elementRef = useRef(null);
   const { x, y } = useMousePosition(elementRef, isInside);
   const size = isHovered ? 350 : 30;
+
+  console.log(x, y);
+  // useMotionTemplate in order to use template literal in framer motion
+  const webkitMaskPosition = useMotionTemplate`${x && x.get() - size / 2}px ${
+    y && y.get() - size / 2
+  }px`;
+  const webkitMaskSize = useMotionTemplate`${isInside ? size : 0}px`;
 
   return (
     <main
@@ -27,6 +34,10 @@ export default function MaskCursor() {
           WebkitMaskSize: `${isInside ? size : 0}px`,
           offset: ['end end', 'start start'],
         }}
+        // style={{
+        //   WebkitMaskPosition: webkitMaskPosition,
+        //   WebkitMaskSize: webkitMaskSize,
+        // }}
         transition={{
           type: 'tween',
           ease: backOut,
@@ -35,7 +46,7 @@ export default function MaskCursor() {
       >
         <p
           className='mx-[10dvw] w-3/4 text-'
-          onMouseEnter={() => {
+          onMouseMove={() => {
             setIsHovered(true);
           }}
           onMouseLeave={() => {
