@@ -1,9 +1,21 @@
-import ChatGPT from "../../svgs/chatGPT";
+import OppositeScrolling from './Components/OppositeScrolling';
 
-export default function Skills() {
+const Skills = () => {
   return (
-    <div className="w-full h-[100dvh]">
-      <ChatGPT />
+    <div className='bg-neutral-800'>
+      <div className='flex h-48 items-center justify-center'>
+        <span className='font-semibold uppercase text-neutral-500'>
+          Scroll down
+        </span>
+      </div>
+      <OppositeScrolling />
+      <div className='flex h-48 items-center justify-center'>
+        <span className='font-semibold uppercase text-neutral-500'>
+          Scroll up
+        </span>
+      </div>
     </div>
   );
-}
+};
+
+export default Skills;
