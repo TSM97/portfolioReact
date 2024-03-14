@@ -4,6 +4,10 @@ import Line from "./Line";
 function HeroSection() {
   return (
     <>
+      <meta
+        name="HeroSection"
+        content="This is my Hero Section that contains some basic information about me "
+      />
       <section className="self-center pt-20 flex text-foreground bg-background min-w-screen mx-auto flex-col h-[70dvh] gap-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 pt-3 justify-between">
           <div className="md:col-span-7 sm:col-span-12 place-self-center">

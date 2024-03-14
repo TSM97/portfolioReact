@@ -29,14 +29,20 @@ export default function FloatingShapes() {
     };
   }, []);
   return (
-    <Canvas
-      orthographic
-      camera={{ position: [0, 0, 500], zoom: 2 }}
-      className="left-1/3 "
-      style={{ position: "absolute", height: "65%", width: "65%" }}
-    >
-      <Model mouse={smoothMouse} />
-      <Environment preset="studio" />
-    </Canvas>
+    <>
+      <meta
+        name="3dModel"
+        content="This is the component that has the 3d Object of my Logo"
+      />
+      <Canvas
+        orthographic
+        camera={{ position: [0, 0, 500], zoom: 2 }}
+        className="left-1/3 "
+        style={{ position: "absolute", height: "65%", width: "65%" }}
+      >
+        <Model mouse={smoothMouse} />
+        <Environment preset="studio" />
+      </Canvas>
+    </>
   );
 }
