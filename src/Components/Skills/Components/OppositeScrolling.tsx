@@ -1,10 +1,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { cards } from "../data/card";
+import { dynamicCards, textCards } from "../data/dynamicCards";
 import SkillCard from "./skillCards";
 import SkillCardText from "./skillCardText";
 
-// * Should try fix smoothness of scrollig - Correction
+// * Should try fix smoothness of scrolling - Correction
 
 const OppositeScrolling = () => {
   const targetRef = useRef(null);
@@ -20,7 +20,7 @@ const OppositeScrolling = () => {
     <section ref={targetRef} className="h-[500dvh] bg-background">
       <section className="flex justify-center gap-5">
         <div>
-          {cards.map((card) => {
+          {dynamicCards.map((card) => {
             return <SkillCard card={card} key={card.id} />;
           })}
         </div>
@@ -29,7 +29,7 @@ const OppositeScrolling = () => {
             className="absolute h-[100dvh] left-0 right-0"
             style={{ top: y }}
           >
-            {cards.map((card) => {
+            {textCards.map((card) => {
               return <SkillCardText card={card} key={card.id} />;
             })}
           </motion.div>

@@ -2,7 +2,7 @@ const SkillCard = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[100dvh] w-[40dvw] overflow-hidden bg-neutral-200 grayscale hover:grayscale-[50%] duration-700"
+      className="group relative h-[100dvh] w-[40dvw] overflow-hidden bg-neutral-200 grayscale hover:grayscale-[60%] duration-700"
     >
       <div
         style={{
