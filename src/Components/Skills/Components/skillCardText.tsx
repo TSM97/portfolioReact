@@ -1,5 +1,6 @@
-const SkillCardText = ({ card }) => {
-  console.log(card.text);
+import { textCardsType } from "../data/dynamicCards";
+
+const SkillCardText = ({ card }: { card: textCardsType }) => {
   return (
     <div
       key={card.id}
@@ -7,10 +8,9 @@ const SkillCardText = ({ card }) => {
     >
       <div className="flex inset-0 h-full flex-col w-full z-10 items-end justify-between">
         <p className="text-5xl">{card.title}</p>
-
         <div>
-          <p className="text-3xl text-right pb-6">{card?.text1}</p>
-          <p className="text-3xl text-right">{card?.text2}</p>
+          <p className="text-2xl text-right pb-5">{card.text1}</p>
+          <p className="text-2xl text-right">{card.text2}</p>
         </div>
       </div>
     </div>

@@ -1,3 +1,16 @@
+export type dynamicCardsType = {
+  url: string;
+  title: string;
+  id: number;
+};
+
+export type textCardsType = {
+  title: string;
+  text1: string;
+  text2: string;
+  id: number;
+};
+
 export const dynamicCards = [
   {
     url: "/images/JavaScript.webp",

@@ -1,4 +1,6 @@
-const SkillCard = ({ card }) => {
+import { dynamicCardsType } from "../data/dynamicCards";
+
+const SkillCard = ({ card }: { card: dynamicCardsType }) => {
   return (
     <div
       key={card.id}
