@@ -5,9 +5,11 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 import { useTheme } from "next-themes";
-import { experienceData, experienceDataType } from "../data/experienceData";
 import { SpinnerSvg } from "../../../svgs";
 import { motion } from "framer-motion";
+import { Tooltip } from "@nextui-org/react";
+
+import { experienceData, experienceDataType } from "../data/experienceData";
 
 export default function VerticalTimelineComp() {
   const { theme } = useTheme();
@@ -52,12 +54,20 @@ export default function VerticalTimelineComp() {
             );
           })}
       </VerticalTimeline>
-      <div className="mt-10 flex  gap-3 lg:flex-col lg:items-center lg:ml-0 ml-2">
-        <div className="dark:bg-slate-100 dark:border-0 border-[4px] border-black bg-[#b2b2b2] w-fit rounded-full">
-          <SpinnerSvg />
-        </div>
+      <div className="mt-10 md:mt-0 flex  gap-3 lg:flex-col lg:items-center lg:ml-0 ml-2">
+        <Tooltip
+          showArrow={true}
+          placement="right-start"
+          delay={700}
+          content="You know that it'll never load anything, right?"
+        >
+          <div className="dark:bg-slate-100 dark:border-0 border-[4px] border-black bg-[#b2b2b2] w-fit rounded-full">
+            <SpinnerSvg />
+          </div>
+        </Tooltip>
+
         <p className="place-content-center text-lg">
-          Loading for next Experience
+          Loading for more Experiences
           {[" . ", " . ", " . "].map((el, i) => (
             <motion.span
               whileInView="visible"
