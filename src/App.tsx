@@ -4,6 +4,7 @@ import HeroSection from "./Components/HeroSection/HeroSection";
 import NavBar from "./Components/NavBar/NavBar";
 import Skills from "./Components/Skills/Skills";
 import Experience from "./Components/Experience/Experience";
+import Footer from "./Components/Footer/Footer";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
       </section>
       <Skills />
       <Experience />
+      <Footer />
     </>
   );
 }

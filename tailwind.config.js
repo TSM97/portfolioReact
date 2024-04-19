@@ -14,11 +14,15 @@ export default {
       themes: {
         light: {
           layout: {}, // light theme layout tokens
-          colors: { background: '#f0edf2' }, // light theme colors
+          colors: {
+            // background: '#f0edf2'
+          }, // light theme colors
         },
         dark: {
           layout: {}, // dark theme layout tokens
-          colors: { background: '#040008' }, // dark theme colors
+          colors: {
+            //  background: '#040008' 
+          }, // dark theme colors
         },
       },
     }),

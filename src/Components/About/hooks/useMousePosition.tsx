@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function useMousePosition(
   elementRef: React.MutableRefObject<null>,
@@ -16,15 +16,15 @@ export default function useMousePosition(
         return;
       }
       if (isInside) {
-        const { left, top } = element.getBoundingClientRect();
+        const { top } = element.getBoundingClientRect();
         setMousePosition({
-          x: e.clientX - left,
+          x: e.clientX,
           y: e.clientY - top,
         });
       }
     };
-    window.addEventListener('mousemove', updateMousePosition);
-    return () => window.removeEventListener('mousemove', updateMousePosition);
+    window.addEventListener("mousemove", updateMousePosition);
+    return () => window.removeEventListener("mousemove", updateMousePosition);
   }, [elementRef, isInside]);
 
   return mousePosition;
