@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export default function useMousePosition(
   elementRef: React.MutableRefObject<null>,
@@ -23,8 +23,8 @@ export default function useMousePosition(
         });
       }
     };
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
+    window.addEventListener('mousemove', updateMousePosition);
+    return () => window.removeEventListener('mousemove', updateMousePosition);
   }, [elementRef, isInside]);
 
   return mousePosition;

@@ -21,7 +21,7 @@ export default {
         dark: {
           layout: {}, // dark theme layout tokens
           colors: {
-            //  background: '#040008' 
+            //  background: '#040008'
           }, // dark theme colors
         },
       },
