@@ -8,11 +8,13 @@ import {
 
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { handleEmailButtonClick } from './Utils';
+import useScreenSize from '../../hooks/useScreenSize';
 import LOGO from '../../svgs/LOGO';
 export default function NavBar() {
+  const { isTablet } = useScreenSize();
   return (
     <>
-      <section className='grid grid-cols-7 grid-rows-2 w-screen gap-x-unit-lg max-w-[100dvw]'>
+      <section className='grid grid-cols-7 grid-rows-2 w-screen h-[15%] gap-x-unit-lg max-w-[100dvw]'>
         <section className='flex text-red col-span-1 row-span-2 pt-5 place-self-center'>
           <LOGO />
         </section>
@@ -22,7 +24,7 @@ export default function NavBar() {
               <Button
                 color='primary'
                 variant='shadow'
-                size='lg'
+                size={`${isTablet ? 'sm' : 'lg'}`}
                 className='font-semibold'
                 onClick={handleEmailButtonClick}
               >

@@ -1,10 +1,15 @@
+import useScreenSize from '../../../hooks/useScreenSize';
 import { textCardsType } from '../data/dynamicCards';
 
 const SkillCardText = ({ card }: { card: textCardsType }) => {
+  const { isTablet } = useScreenSize();
+
   return (
     <div
       key={card.id}
-      className='h-[100dvh] w-[40dvw] even:bg-foreground odd:text-foreground text-foreground-100 p-[10%]'
+      className={`${
+        isTablet ? 'w-screen h-[60dvh]' : 'w-[40dvw] h-[100dvh] p-[10%]'
+      } even:bg-foreground odd:text-foreground text-foreground-100`}
     >
       <div className='flex inset-0 h-full flex-col w-full z-10 items-end justify-between'>
         <p className='text-5xl'>{card.title}</p>

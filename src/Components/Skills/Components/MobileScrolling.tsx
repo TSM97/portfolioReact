@@ -10,10 +10,10 @@ const MobileScrolling = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-95%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['5%', '-420dvw']);
 
   return (
-    <section ref={targetRef} className='relative h-[200vh]'>
+    <section ref={targetRef} className='relative h-[400vh]'>
       <div className='sticky top-0 flex h-screen items-center overflow-hidden'>
         <motion.div style={{ x }} className='flex gap-4'>
           {dynamicCards.map((card) => {

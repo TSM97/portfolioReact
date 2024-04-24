@@ -4,7 +4,7 @@ import Line from './Line';
 function HeroSection() {
   return (
     <>
-      <section className='self-center pt-20 flex text-foreground bg-background min-w-screen mx-auto flex-col h-[70dvh] gap-10'>
+      <section className='self-center pt-20 flex text-foreground  min-w-full  mx-auto flex-col h-[70%] gap-10'>
         <div className='grid grid-cols-1 lg:grid-cols-12 pt-3 justify-between'>
           <div className='md:col-span-7 sm:col-span-12 place-self-center'>
             <h1 className='font-extrabold text-4xl lg:text-6xl pt-4'>
@@ -36,7 +36,7 @@ function HeroSection() {
           </div>
         </div>
       </section>
-      <section className='min-h-[20dvh] min-w-screen'>
+      <section className='min-h-[10%] min-w-screen'>
         <Line />
       </section>
     </>
