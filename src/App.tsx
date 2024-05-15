@@ -19,8 +19,12 @@ function App() {
       <section id='About'>
         <About />
       </section>
-      <Skills />
-      <Experience />
+      <section id='Skills'>
+        <Skills />
+      </section>
+      <section id='Experience'>
+        <Experience />
+      </section>
       <Footer />
     </>
   );

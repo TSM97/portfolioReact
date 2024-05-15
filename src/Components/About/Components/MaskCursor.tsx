@@ -15,7 +15,7 @@ export default function MaskCursor() {
     elementRef,
     isInside
   );
-  const size = isHovered || isTablet ? 350 : 30;
+  const size = isTablet ? (isHovered ? 150 : 30) : isHovered ? 350 : 30;
   return (
     <>
       <main
@@ -25,7 +25,7 @@ export default function MaskCursor() {
         onMouseLeave={() => setIsInside(false)}
       >
         <motion.div
-          className='mask flex items-center justify-center cursor-default w-full h-[100dvh] absolute xl:text-6xl md:text-4xl sm:text-3xl'
+          className='mask flex items-center justify-center cursor-default w-full h-[100dvh] absolute xl:text-6xl md:text-4xl sm:text-3xl text-2xl'
           // Pt-[5dvh] for default font-family, in order to be aligned
           animate={{
             WebkitMaskPosition: `${x && x - size / 2}px ${y && y - size / 2}px`,
@@ -53,7 +53,7 @@ export default function MaskCursor() {
             Ofcourse, I always try to meet my friends and catch up.
           </p>
         </motion.div>
-        <div className=' flex items-center justify-center cursor-default w-full h-[100dvh] xl:text-6xl md:text-4xl sm:text-3xl'>
+        <div className=' flex items-center justify-center cursor-default w-full h-[100dvh] xl:text-6xl md:text-4xl sm:text-3xl text-2xl'>
           <p className=' mx-[10dvw] w-3/4 h-1/3'>
             My <span className='text-[#e33d30]'>passion for programming</span>{' '}
             extends far beyond the confines of the workweek. During my free
