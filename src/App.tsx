@@ -5,12 +5,14 @@ import NavBar from './Components/NavBar/NavBar';
 import Skills from './Components/Skills/Skills';
 import Experience from './Components/Experience/Experience';
 import Footer from './Components/Footer/Footer';
+import Transition from './Components/Transition/Transition';
 
 import './App.css';
 
 function App() {
   return (
     <>
+      <Transition />
       <section id='Header' className='h-[100dvh]'>
         <NavBar />
         <FloatingShapes />
