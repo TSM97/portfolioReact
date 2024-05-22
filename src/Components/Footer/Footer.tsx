@@ -24,7 +24,7 @@ export default function Footer() {
               return (
                 <a
                   href={data.link}
-                  target='_blank'
+                  target='blank'
                   className='text-foreground transition duration-100 hover:text-secondary'
                 >
                   <svg
@@ -33,6 +33,7 @@ export default function Footer() {
                     height='24'
                     viewBox='0 0 24 24'
                     fill='currentColor'
+                    xmlns='http://www.w3.org/2000/svg'
                   >
                     <path d={data.icon} />
                   </svg>
@@ -43,7 +44,7 @@ export default function Footer() {
         </div>
 
         <div className='py-8 text-center text-sm text-foreground-500'>
-          © 2021 - Present Flowrift. All rights reserved.
+          © 2024 - This is my Portfolio. That's all.
         </div>
       </footer>
     </div>
