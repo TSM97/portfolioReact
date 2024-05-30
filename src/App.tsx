@@ -8,11 +8,14 @@ import Footer from './Components/Footer/Footer';
 import Transition from './Components/Transition/Transition';
 
 import './App.css';
+import { useAnimationControls } from 'framer-motion';
 
 function App() {
+  const controls = useAnimationControls();
+
   return (
     <>
-      <Transition />
+      <Transition controls={controls} />
       <section id='Header' className='h-[100dvh]'>
         <NavBar />
         <FloatingShapes />
@@ -27,7 +30,7 @@ function App() {
       <section id='Experience'>
         <Experience />
       </section>
-      <Footer />
+      <Footer controls={controls} />
     </>
   );
 }
