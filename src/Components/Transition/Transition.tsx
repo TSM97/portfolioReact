@@ -1,4 +1,4 @@
-import { AnimationControls, motion } from 'framer-motion';
+import { AnimationControls, motion } from "framer-motion";
 
 export default function Transition({
   controls,
@@ -6,13 +6,13 @@ export default function Transition({
   controls: AnimationControls;
 }) {
   return (
-    <div className='sticky top-0 z-50'>
+    <div className="sticky top-0 z-50">
       <motion.div
-        className='absolute bg-[#262626]  w-[100dvw] h-[500dvh] top-[100dvh]  z-30'
+        className="absolute bg-[#262626]  w-[100dvw] h-[500dvh] top-[100dvh]  z-30"
         animate={controls}
-        initial='initial'
+        initial="initial"
         transition={{
-          ease: 'circInOut',
+          ease: "circInOut",
         }}
       ></motion.div>
       {/* <motion.div
