@@ -1,10 +1,10 @@
-import { useGLTF } from '@react-three/drei';
-import { Float } from '@react-three/drei';
-import { useTransform } from 'framer-motion';
-import { motion } from 'framer-motion-3d';
+import { useGLTF } from "@react-three/drei";
+import { Float } from "@react-three/drei";
+import { useTransform } from "framer-motion";
+import { motion } from "framer-motion-3d";
 
-export default function Model({ mouse }) {
-  const { nodes } = useGLTF('/medias/untitled.glb');
+export default function Model({ mouse }: { mouse: any }) {
+  const { nodes } = useGLTF("/medias/untitled.glb");
   return (
     <Float>
       <group>
@@ -18,9 +18,17 @@ export default function Model({ mouse }) {
   );
 }
 
-useGLTF.preload('/medias/untitled.glb');
+useGLTF.preload("/medias/untitled.glb");
 
-function Mesh({ node, mouse, multiplier }) {
+function Mesh({
+  node,
+  mouse,
+  multiplier,
+}: {
+  node: any;
+  mouse: any;
+  multiplier: any;
+}) {
   const {
     castShadow,
     receiveShadow,
