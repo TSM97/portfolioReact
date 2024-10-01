@@ -29,6 +29,7 @@
     "rollup": "^4.22.5",
     "three": "^0.160.1"
   },
+  "homepage": "https://tsm97.github.io/portfolioReact",
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
