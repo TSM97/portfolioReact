@@ -9,6 +9,7 @@ import Transition from "./Components/Transition/Transition";
 import "./App.css";
 import { useAnimationControls } from "framer-motion";
 import UnderConstruction from "./Components/UnderConstruction";
+import FloatingShapes from "./Components/FloatingShapes/FloatingShapes";
 
 function App() {
   const controls = useAnimationControls();
