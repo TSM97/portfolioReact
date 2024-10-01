@@ -13,27 +13,27 @@ export type textCardsType = {
 
 export const dynamicCards = [
   {
-    url: "/images/JavaScript.webp",
+    url: `${import.meta.env.BASE_URL}/images/JavaScript.webp`,
     title: "JavaScript / TypeScript",
     id: 5,
   },
   {
-    url: "/images/REACT2.webp",
+    url: `${import.meta.env.BASE_URL}/images/REACT2.webp`,
     title: "React / NextJS",
     id: 4,
   },
   {
-    url: "/images/Colors.webp",
+    url: `${import.meta.env.BASE_URL}/images/Colors.webp`,
     title: "Tailwind / Bootstrap",
     id: 3,
   },
   {
-    url: "/images/FramerMotion.webp",
+    url: `${import.meta.env.BASE_URL}/images/FramerMotion.webp`,
     title: "Framer Motion / ThreeJS",
     id: 2,
   },
   {
-    url: "/images/HTML2.webp",
+    url: `${import.meta.env.BASE_URL}/images/HTML2.webp`,
     title: "CSS / HTML",
     id: 1,
   },
