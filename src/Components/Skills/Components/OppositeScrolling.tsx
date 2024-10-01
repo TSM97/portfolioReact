@@ -14,8 +14,6 @@ const OppositeScrolling = () => {
   });
   const y = useTransform(scrollYProgress, [0, 1], ["-400dvh", "400dvh"]);
 
-  console.log("y: " + y.get());
-
   return (
     <section ref={targetRef} className="h-[500dvh] bg-background">
       <section className="flex justify-center gap-5">
