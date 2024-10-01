@@ -1,5 +1,4 @@
 import About from "./Components/About/About";
-import FloatingShapes from "./Components/FloatingShapes/FloatingShapes";
 import HeroSection from "./Components/HeroSection/HeroSection";
 import NavBar from "./Components/NavBar/NavBar";
 import Skills from "./Components/Skills/Skills";
@@ -20,7 +19,7 @@ function App() {
       <UnderConstruction />
       <section id="Header" className="h-[100dvh]">
         <NavBar />
-        <FloatingShapes />
+        {/* <FloatingShapes /> */}
         <HeroSection />
       </section>
       <section id="About">

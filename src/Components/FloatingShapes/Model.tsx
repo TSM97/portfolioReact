@@ -18,7 +18,7 @@ export default function Model({ mouse }: { mouse: any }) {
   );
 }
 
-useGLTF.preload(`${import.meta.env.BASE_URL}medias/untitled.glb`);
+useGLTF.preload("/medias/untitled.glb");
 
 function Mesh({
   node,
