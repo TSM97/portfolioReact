@@ -19,7 +19,7 @@ function App() {
       <UnderConstruction />
       <section id="Header" className="h-[100dvh]">
         <NavBar />
-        {/* <FloatingShapes /> */}
+        <FloatingShapes />
         <HeroSection />
       </section>
       <section id="About">
