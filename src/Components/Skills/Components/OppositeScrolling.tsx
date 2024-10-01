@@ -18,8 +18,8 @@ const OppositeScrolling = () => {
     <section ref={targetRef} className="h-[500dvh] bg-background">
       <section className="flex justify-center gap-5">
         <div>
-          {dynamicCards.map((card) => {
-            return <SkillCard card={card} key={card.id} />;
+          {dynamicCards.map((card, i) => {
+            return <SkillCard card={card} key={card.id + i} />;
           })}
         </div>
         <div className="overflow-y-hidden w-[40dvw] sticky top-0">
@@ -27,8 +27,8 @@ const OppositeScrolling = () => {
             className="absolute h-[100dvh] left-0 right-0"
             style={{ top: y }}
           >
-            {textCards.map((card) => {
-              return <SkillCardText card={card} key={card.id} />;
+            {textCards.map((card, i) => {
+              return <SkillCardText card={card} key={card.id + i} />;
             })}
           </motion.div>
         </div>

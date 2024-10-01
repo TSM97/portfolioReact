@@ -8,9 +8,10 @@ export default function Footer({ controls }: { controls: AnimationControls }) {
       <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="flex flex-col items-center border-t pt-6">
           <nav className="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start md:gap-6">
-            {footerDataSections.map((data) => {
+            {footerDataSections.map((data, i) => {
               return (
                 <div
+                  key={i}
                   onClick={async () => {
                     setTimeout(() => {
                       scrollTo(data.link);
