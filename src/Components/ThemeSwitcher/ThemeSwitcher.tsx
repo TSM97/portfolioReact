@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Switch } from "@nextui-org/react";
-import { useTheme } from "next-themes";
+import { useEffect, useState } from 'react';
+import { Switch } from '@nextui-org/react';
+import { useTheme } from 'next-themes';
 
-import { Sun, Moon } from "../../svgs/index.ts";
+import { Sun, Moon } from '../../svgs/index.ts';
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -17,19 +17,19 @@ export function ThemeSwitcher() {
   return (
     <Switch
       defaultSelected
-      size="lg"
-      color="secondary"
+      size='lg'
+      color='primary'
       onChange={() => {
-        theme === "dark" ? setTheme("light") : setTheme("dark");
+        theme === 'dark' ? setTheme('light') : setTheme('dark');
       }}
       classNames={{
-        wrapper: "p-1 m-0 h-4 overflow-visible",
+        wrapper: 'p-1 m-0 h-4 overflow-visible absoulte',
       }}
       thumbIcon={({ isSelected }) =>
         isSelected ? (
-          <Sun className="w-full h-full" />
+          <Sun className='w-full h-full' />
         ) : (
-          <Moon className="w-full h-full" />
+          <Moon className='w-full h-full' />
         )
       }
     />
