@@ -32,6 +32,14 @@ export const experienceData = [
     subTitle: "FrontEnd Developer",
     date: "03/2023 - Present",
     text: "Html, CSS, Bootstrap, Tailwind, NextJs, ASP.NET Razor",
-    id: 2,
+    id: 3,
+  },
+  {
+    icon: <DevJobSvg />,
+    jobTitle: "Freelancer",
+    subTitle: "Beekeeping Web App - Honey Product Display",
+    date: "08/2024 - Present",
+    text: "React, TypeScript, Tailwind, framerMotion, Firebase, UI/UX",
+    id: 4,
   },
 ];

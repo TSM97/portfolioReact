@@ -23,6 +23,7 @@ export default function VerticalTimelineComp() {
           experienceData.map((el: experienceDataType) => {
             return (
               <VerticalTimelineElement
+                key={el?.id}
                 className="vertical-timeline-element--work dark:text-black text-white mr-10 xl:mr-0"
                 contentStyle={{
                   background: theme === "light" ? "#121212" : "#ecedee",
