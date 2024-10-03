@@ -36,7 +36,7 @@ export default function NavBar() {
             </Button>
             <Button
               as={Link}
-              href="/CV/MyResume.pdf"
+              href={`${import.meta.env.BASE_URL}/CV/MyResume.pdf`}
               download
               color="primary"
               variant="bordered"
@@ -63,7 +63,7 @@ export default function NavBar() {
               <NavbarItem className="text-lg" isActive>
                 <Button
                   as={Link}
-                  href="/CV/MyResume.pdf"
+                  href={`${import.meta.env.BASE_URL}/CV/MyResume.pdf`}
                   download
                   color="primary"
                   variant="bordered"
