@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef } from 'react';
-import scrollTo from '../../utils/scrollTo';
+import { useCallback, useEffect, useRef } from "react";
+import scrollTo from "../../utils/scrollTo";
+import useScreenSize from "../../hooks/useScreenSize";
 
 // Not yet fixed!
 
@@ -9,6 +10,7 @@ export default function Line() {
   let x: number = 0.5;
   let time: number = Math.PI / 2;
   let reqId: number | null = null;
+  const { isMobile } = useScreenSize();
 
   const setPath = useCallback(
     (progress: number) => {
@@ -16,8 +18,8 @@ export default function Line() {
       if (path.current) {
         const pathCur = path.current as unknown as HTMLElement;
         pathCur.setAttributeNS(
-          '',
-          'd',
+          "",
+          "d",
           `M0 250 Q${width * x} ${250 + progress}, ${width} 250`
         );
       }
@@ -72,10 +74,10 @@ export default function Line() {
 
   return (
     <>
-      <div className='flex justify-center items-center'>
-        <div className='h-[1px] mb-5 w-[90dvw] relative'>
+      <div className="flex justify-center items-center">
+        <div className="h-[1px] mb-5 w-[90dvw] relative">
           <div
-            className='h-12 relative z-10 top-16'
+            className="h-12 z-10 top-16"
             onMouseEnter={() => {
               manageMouseEnter();
             }}
@@ -86,20 +88,22 @@ export default function Line() {
               manageMouseLeave();
             }}
           ></div>
-          <div className='flex justify-center items-center'>
-            <div className='pr-2'>{'<'}</div>
+          <div className="flex justify-center items-center">
+            <div className="pr-2">{"<"}</div>
             <div
-              onClick={() => scrollTo('About')}
-              className='text-center font-light border-1 border-foreground-600 rounded-md text-foreground-800 px-2 py-1 text-lg z-20 cursor-pointer'
+              onClick={() => scrollTo("About")}
+              className={`text-center font-light border-1 border-foreground-600 rounded-md text-foreground-800 px-2 py-1 text-lg z-20 cursor-pointer ${
+                isMobile ? "prevent-select" : null
+              }`}
             >
               Keep Scrolling
             </div>
-            <div className='pl-2'>{'>'}</div>
+            <div className="pl-2">{">"}</div>
           </div>
 
-          <svg className='w-full h-[300px] absolute -top-[9.5rem]'>
+          <svg className="w-full h-[300px] absolute -top-[9.5rem]">
             <path
-              className='stroke-foreground stroke-1 fill-none'
+              className="stroke-foreground stroke-1 fill-none"
               ref={path}
             ></path>
           </svg>

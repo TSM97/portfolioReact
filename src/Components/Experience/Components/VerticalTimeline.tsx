@@ -18,7 +18,10 @@ export default function VerticalTimelineComp() {
 
   return (
     <>
-      <VerticalTimeline lineColor={theme === "light" ? "#121212" : "#ec6554"}>
+      <VerticalTimeline
+        lineColor={theme === "light" ? "#121212" : "#ec6554"}
+        animate={!isMobile}
+      >
         {experienceData &&
           experienceData.map((el: experienceDataType) => {
             return (
@@ -73,7 +76,7 @@ export default function VerticalTimelineComp() {
           content="You know that it'll never load anything, right?"
         >
           <div className="dark:bg-slate-100 dark:border-0 border-[4px] border-black bg-[#b2b2b2] w-fit rounded-full">
-            <SpinnerSvg className={isMobile ? `h-[50px] w-[50px]` : ""} />
+            <SpinnerSvg className={isMobile ? `h-[45px] w-[45px]` : ""} />
           </div>
         </Tooltip>
 

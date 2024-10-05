@@ -1,15 +1,15 @@
-import { backOut, motion } from 'framer-motion';
-import { useRef, useState } from 'react';
-import '../mask.css';
+import { backOut, motion } from "framer-motion";
+import { useRef, useState } from "react";
+import "../mask.css";
 
-import useMousePosition from '../../../hooks/useMousePosition';
-import useScreenSize from '../../../hooks/useScreenSize';
+import useMousePosition from "../../../hooks/useMousePosition";
+import useScreenSize from "../../../hooks/useScreenSize";
 
 export default function MaskCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const [isInside, setIsInside] = useState(false);
   const elementRef = useRef(null);
-  const { isTablet } = useScreenSize();
+  const { isTablet, isMobile } = useScreenSize();
 
   const { x, y }: { x: number | null; y: number | null } = useMousePosition(
     elementRef,
@@ -20,26 +20,28 @@ export default function MaskCursor() {
     <>
       <main
         ref={elementRef}
-        className='lg:text-5xl md:text-3xl sm:text-xl text-lg text-center'
+        className="lg:text-5xl md:text-3xl sm:text-xl text-lg text-center"
         onMouseMove={() => setIsInside(true)}
         onMouseLeave={() => setIsInside(false)}
       >
         <motion.div
-          className='mask flex items-center justify-center cursor-default w-full h-[100dvh] absolute xl:text-6xl md:text-4xl sm:text-3xl text-2xl'
+          className="mask flex items-center justify-center cursor-default w-full h-[100dvh] absolute xl:text-6xl md:text-4xl sm:text-3xl text-2xl"
           // Pt-[5dvh] for default font-family, in order to be aligned
           animate={{
             WebkitMaskPosition: `${x && x - size / 2}px ${y && y - size / 2}px`,
             WebkitMaskSize: `${isInside ? size : 0}px`,
-            offset: ['end end', 'start start'],
+            offset: ["end end", "start start"],
           }}
           transition={{
-            type: 'tween',
+            type: "tween",
             ease: backOut,
             duration: 0.7,
           }}
         >
           <p
-            className='mx-[10dvw] w-3/4 h-1/3'
+            className={`mx-[10dvw] w-3/4 h-1/3 ${
+              isMobile ? "prevent-select" : null
+            }`}
             onMouseEnter={() => {
               setIsHovered(true);
             }}
@@ -53,13 +55,17 @@ export default function MaskCursor() {
             Ofcourse, I always try to meet my friends and catch up.
           </p>
         </motion.div>
-        <div className=' flex items-center justify-center cursor-default w-full h-[100dvh] xl:text-6xl md:text-4xl sm:text-3xl text-2xl'>
-          <p className=' mx-[10dvw] w-3/4 h-1/3'>
-            My <span className='text-[#e33d30]'>passion for programming</span>{' '}
+        <div className=" flex items-center justify-center cursor-default w-full h-[100dvh] xl:text-6xl md:text-4xl sm:text-3xl text-2xl">
+          <p
+            className={` mx-[10dvw] w-3/4 h-1/3 ${
+              isMobile ? "prevent-select" : null
+            }`}
+          >
+            My <span className="text-[#e33d30]">passion for programming</span>{" "}
             extends far beyond the confines of the workweek. During my free
             time, you'll often find me diving deep into various coding projects,
-            exploring new technologies, and honing my skills in{' '}
-            <span className='text-[#e33d30]'>FrontEnd development</span>.
+            exploring new technologies, and honing my skills in{" "}
+            <span className="text-[#e33d30]">FrontEnd development</span>.
           </p>
         </div>
       </main>

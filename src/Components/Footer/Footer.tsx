@@ -2,7 +2,13 @@ import { footerDataSections, footerDataSocial } from "./data";
 import scrollTo from "../../utils/scrollTo";
 import { AnimationControls } from "framer-motion";
 
-export default function Footer({ controls }: { controls: AnimationControls }) {
+export default function Footer({
+  controls,
+  setTransition,
+}: {
+  controls: AnimationControls;
+  setTransition: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <div className=" pt-4 sm:pt-10 lg:pt-12">
       <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -13,6 +19,7 @@ export default function Footer({ controls }: { controls: AnimationControls }) {
                 <div
                   key={i}
                   onClick={async () => {
+                    await setTransition(true);
                     setTimeout(() => {
                       scrollTo(data.link);
                     }, 60);
@@ -24,6 +31,7 @@ export default function Footer({ controls }: { controls: AnimationControls }) {
                       y: "0",
                       transition: { duration: 0 },
                     });
+                    setTransition(false);
                   }}
                   className="text-foreground text-xl transition duration-100 hover:text-primary hover:cursor-pointer"
                 >

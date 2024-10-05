@@ -1,8 +1,13 @@
 #root {
   /* font-family: "Playfair Display", serif; */
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
 }
 body {
   overflow-x: hidden;
   margin: 0 auto;
+}
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
