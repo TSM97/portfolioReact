@@ -24,7 +24,7 @@ export default function Footer({
                       scrollTo(data.link);
                     }, 60);
                     await controls.start({
-                      y: "-600dvh",
+                      y: "-600vh",
                       transition: { duration: 1 },
                     });
                     await controls.start({

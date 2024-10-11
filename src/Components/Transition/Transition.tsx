@@ -8,7 +8,7 @@ export default function Transition({
   return (
     <div className="sticky top-0 z-50">
       <motion.div
-        className="absolute bg-[#262626]  w-[100dvw] h-[500dvh] top-[100dvh]  z-30"
+        className="absolute bg-[#262626]  w-[100dvw] h-[500vh] top-[100vh]  z-30"
         animate={controls}
         initial="initial"
         transition={{
@@ -16,9 +16,9 @@ export default function Transition({
         }}
       ></motion.div>
       {/* <motion.div
-        className='absolute bg-black w-[100dvw] h-[100dvh] z-40'
+        className='absolute bg-black w-[100dvw] h-[100vh] z-40'
         animate={{
-          y: '-100dvh',
+          y: '-100vh',
         }}
         transition={{
           ease: 'circInOut',

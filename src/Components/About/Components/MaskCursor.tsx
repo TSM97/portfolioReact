@@ -25,8 +25,8 @@ export default function MaskCursor() {
         onMouseLeave={() => setIsInside(false)}
       >
         <motion.div
-          className="mask flex items-center justify-center cursor-default w-full h-[100dvh] absolute xl:text-6xl md:text-4xl sm:text-3xl text-2xl"
-          // Pt-[5dvh] for default font-family, in order to be aligned
+          className="mask flex items-center justify-center cursor-default w-full h-[100vh] absolute xl:text-6xl md:text-4xl sm:text-3xl text-2xl"
+          // Pt-[5vh] for default font-family, in order to be aligned
           animate={{
             WebkitMaskPosition: `${x && x - size / 2}px ${y && y - size / 2}px`,
             WebkitMaskSize: `${isInside ? size : 0}px`,
@@ -55,7 +55,7 @@ export default function MaskCursor() {
             Ofcourse, I always try to meet my friends and catch up.
           </p>
         </motion.div>
-        <div className=" flex items-center justify-center cursor-default w-full h-[100dvh] xl:text-6xl md:text-4xl sm:text-3xl text-2xl">
+        <div className=" flex items-center justify-center cursor-default w-full h-[100vh] xl:text-6xl md:text-4xl sm:text-3xl text-2xl">
           <p
             className={` mx-[10dvw] w-3/4 h-1/3 ${
               isMobile ? "prevent-select" : null

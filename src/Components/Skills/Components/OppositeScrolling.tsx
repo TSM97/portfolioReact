@@ -12,10 +12,10 @@ const OppositeScrolling = () => {
     target: targetRef,
     offset: ["start start", "end end"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-400dvh", "400dvh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-400vh", "400vh"]);
 
   return (
-    <section ref={targetRef} className="h-[500dvh] bg-background">
+    <section ref={targetRef} className="h-[500vh] bg-background">
       <section className="flex justify-center gap-5">
         <div>
           {dynamicCards.map((card) => {
@@ -24,7 +24,7 @@ const OppositeScrolling = () => {
         </div>
         <div className="overflow-y-hidden w-[40dvw] sticky top-0">
           <motion.div
-            className="absolute h-[100dvh] left-0 right-0"
+            className="absolute h-[100vh] left-0 right-0"
             style={{ top: y }}
           >
             {textCards.map((card) => {

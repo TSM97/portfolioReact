@@ -14,7 +14,7 @@ export default function NavBar() {
   const { isTablet, isMobile } = useScreenSize();
   return (
     <>
-      <section className="grid grid-cols-2 lg:grid-cols-7 grid-rows-2 w-screen min-h-[15dvh] gap-x-unit-lg max-w-[100dvw]">
+      <section className="grid grid-cols-2 lg:grid-cols-7 grid-rows-2 w-screen min-h-[15vh] gap-x-unit-lg max-w-[100dvw]">
         <section className="flex text-red col-span-1 row-span-2 md:pt-7 place-self-center">
           <LOGO
             className={`${
