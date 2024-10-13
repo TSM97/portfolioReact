@@ -4,6 +4,7 @@ import "../mask.css";
 
 import useMousePosition from "../../../hooks/useMousePosition";
 import useScreenSize from "../../../hooks/useScreenSize";
+import MobileTap from "./MobileTap";
 
 export default function MaskCursor() {
   const [isHovered, setIsHovered] = useState(false);
@@ -15,15 +16,16 @@ export default function MaskCursor() {
     elementRef,
     isInside
   );
-  const size = isTablet ? (isHovered ? 150 : 30) : isHovered ? 350 : 30;
+  const size = isTablet ? (isHovered ? 300 : 30) : isHovered ? 350 : 30;
   return (
     <>
       <main
         ref={elementRef}
-        className="lg:text-5xl md:text-3xl sm:text-xl text-lg text-center"
+        className="lg:text-5xl md:text-3xl sm:text-xl text-lg text-center relative"
         onMouseMove={() => setIsInside(true)}
         onMouseLeave={() => setIsInside(false)}
       >
+        {isMobile ? <MobileTap /> : null}
         <motion.div
           className="mask flex items-center justify-center cursor-default w-full h-[100vh] absolute xl:text-6xl md:text-4xl sm:text-3xl text-2xl"
           // Pt-[5vh] for default font-family, in order to be aligned
