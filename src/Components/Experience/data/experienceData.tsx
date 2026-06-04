@@ -19,14 +19,6 @@ export const experienceData = [
     id: 1,
   },
   {
-    icon: <LessonSvg />,
-    jobTitle: "Private Lessons",
-    subTitle: "With a professional Front-end developer.",
-    date: "05/2023 - 12/2023",
-    text: "Html, CSS, javascript, React",
-    id: 2,
-  },
-  {
     icon: <DevJobSvg />,
     jobTitle: "SoftOne - Impact",
     subTitle: "FrontEnd Developer",
