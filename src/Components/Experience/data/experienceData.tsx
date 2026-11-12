@@ -1,4 +1,4 @@
-import { EducationSvg, LessonSvg, DevJobSvg } from "../../../svgs";
+import { EducationSvg, DevJobSvg } from "../../../svgs";
 
 export type experienceDataType = {
   icon: React.ReactNode;
