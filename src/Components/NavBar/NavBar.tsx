@@ -45,6 +45,9 @@ export default function NavBar() {
             >
               Download CV
             </Button>
+            <div className="flex justify-center pt-3">
+              <ThemeSwitcher />
+            </div>
           </section>
         ) : (
           <Navbar maxWidth="2xl" isBordered className="col-span-6">

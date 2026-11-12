@@ -10,13 +10,19 @@ export default function LenisScrollProvider({
 }: SmoothScrollProps): JSX.Element {
   useEffect(() => {
     const lenis = new Lenis();
+    let rafId = 0;
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
   }, []);
 
   return <>{children}</>;

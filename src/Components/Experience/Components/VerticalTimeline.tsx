@@ -47,7 +47,7 @@ export default function VerticalTimelineComp() {
                 }
                 contentArrowStyle={{
                   borderRight: `7px solid  ${
-                    theme === "light" ? "#121212X" : "#ecedee"
+                    theme === "light" ? "#121212" : "#ecedee"
                   }`,
                 }}
                 date={el?.date}

@@ -16,14 +16,14 @@ export function ThemeSwitcher() {
 
   return (
     <Switch
-      defaultSelected
+      isSelected={theme !== 'light'}
       size='lg'
       color='primary'
       onChange={() => {
         theme === 'dark' ? setTheme('light') : setTheme('dark');
       }}
       classNames={{
-        wrapper: 'p-1 m-0 h-4 overflow-visible absoulte',
+        wrapper: 'p-1 m-0 h-4 overflow-visible absolute',
       }}
       thumbIcon={({ isSelected }) =>
         isSelected ? (

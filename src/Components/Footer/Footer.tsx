@@ -1,6 +1,7 @@
 import { footerDataSections, footerDataSocial } from "./data";
 import scrollTo from "../../utils/scrollTo";
 import { AnimationControls } from "framer-motion";
+import { useRef } from "react";
 
 export default function Footer({
   controls,
@@ -9,6 +10,8 @@ export default function Footer({
   controls: AnimationControls;
   setTransition: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const isTransitioning = useRef(false);
+
   return (
     <div className=" pt-4 sm:pt-10 lg:pt-12">
       <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -19,7 +22,9 @@ export default function Footer({
                 <div
                   key={i}
                   onClick={async () => {
-                    await setTransition(true);
+                    if (isTransitioning.current) return;
+                    isTransitioning.current = true;
+                    setTransition(true);
                     setTimeout(() => {
                       scrollTo(data.link);
                     }, 60);
@@ -32,6 +37,7 @@ export default function Footer({
                       transition: { duration: 0 },
                     });
                     setTransition(false);
+                    isTransitioning.current = false;
                   }}
                   className="text-foreground text-xl transition duration-100 hover:text-primary hover:cursor-pointer"
                 >
@@ -47,7 +53,8 @@ export default function Footer({
                 <a
                   key={i}
                   href={data.link}
-                  target="blank"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-foreground transition duration-100 hover:text-primary"
                 >
                   <svg
@@ -67,7 +74,7 @@ export default function Footer({
         </div>
 
         <div className="py-8 text-center text-sm text-foreground-500">
-          © 2024 - This is my Portfolio. That's all.
+          © {new Date().getFullYear()} - This is my Portfolio. That's all.
         </div>
       </footer>
     </div>

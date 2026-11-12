@@ -2,32 +2,38 @@ import { useGLTF } from "@react-three/drei";
 import { Float } from "@react-three/drei";
 import { useTransform } from "framer-motion";
 import { motion } from "framer-motion-3d";
+import type { MotionValue } from "framer-motion";
+import type { Mesh as ThreeMesh } from "three";
 
-export default function Model({ mouse }: { mouse: any }) {
-  const { nodes } = useGLTF("./medias/untitled.glb");
+const MODEL_URL = `${import.meta.env.BASE_URL}medias/untitled.glb`;
+
+type Mouse = { x: MotionValue<number>; y: MotionValue<number> };
+
+export default function Model({ mouse }: { mouse: Mouse }) {
+  const { nodes } = useGLTF(MODEL_URL);
   return (
     <Float>
       <group>
-        <Mesh node={nodes.center} mouse={mouse} multiplier={1.2} />
-        <Mesh node={nodes.Torus_2} mouse={mouse} multiplier={2} />
-        <Mesh node={nodes.topTorus} mouse={mouse} multiplier={0} />
-        <Mesh node={nodes.bottomTorus} mouse={mouse} multiplier={0} />
-        <Mesh node={nodes.Torus} mouse={mouse} multiplier={2.5} />
+        <Mesh node={nodes.center as ThreeMesh} mouse={mouse} multiplier={1.2} />
+        <Mesh node={nodes.Torus_2 as ThreeMesh} mouse={mouse} multiplier={2} />
+        <Mesh node={nodes.topTorus as ThreeMesh} mouse={mouse} multiplier={0} />
+        <Mesh node={nodes.bottomTorus as ThreeMesh} mouse={mouse} multiplier={0} />
+        <Mesh node={nodes.Torus as ThreeMesh} mouse={mouse} multiplier={2.5} />
       </group>
     </Float>
   );
 }
 
-useGLTF.preload("./medias/untitled.glb");
+useGLTF.preload(MODEL_URL);
 
 function Mesh({
   node,
   mouse,
   multiplier,
 }: {
-  node: any;
-  mouse: any;
-  multiplier: any;
+  node: ThreeMesh;
+  mouse: Mouse;
+  multiplier: number;
 }) {
   const {
     castShadow,
