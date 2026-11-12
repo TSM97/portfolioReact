@@ -13,7 +13,7 @@ const LIGHT_MODE_COLOR = "#45464c";
 
 type Mouse = { x: MotionValue<number>; y: MotionValue<number> };
 
-export default function Model({ mouse }: { mouse: Mouse }) {
+export default function Model({ mouse, drag }: { mouse: Mouse; drag: Mouse }) {
   const { nodes } = useGLTF(MODEL_URL);
   const { resolvedTheme } = useTheme();
 
@@ -36,13 +36,13 @@ export default function Model({ mouse }: { mouse: Mouse }) {
 
   return (
     <Float>
-      <group>
+      <motion.group rotation-x={drag.x} rotation-y={drag.y}>
         <Mesh node={nodes.center as ThreeMesh} mouse={mouse} multiplier={1.2} />
         <Mesh node={nodes.Torus_2 as ThreeMesh} mouse={mouse} multiplier={2} />
         <Mesh node={nodes.topTorus as ThreeMesh} mouse={mouse} multiplier={0} />
         <Mesh node={nodes.bottomTorus as ThreeMesh} mouse={mouse} multiplier={0} />
         <Mesh node={nodes.Torus as ThreeMesh} mouse={mouse} multiplier={2.5} />
-      </group>
+      </motion.group>
     </Float>
   );
 }
