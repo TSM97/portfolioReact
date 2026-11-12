@@ -21,7 +21,7 @@ export default function ScrollToTop({ onClick }: { onClick: () => void }) {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          className="fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-black shadow-lg hover:brightness-110"
+          className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-primary/90 text-black shadow-lg hover:brightness-110"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

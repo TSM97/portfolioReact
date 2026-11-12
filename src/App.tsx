@@ -43,7 +43,7 @@ function App() {
     <>
       {transition && <Transition controls={controls} />}
       {/* <UnderConstruction /> */}
-      <section id="Header" className="h-[100svh]">
+      <section id="Header" className="h-[100svh] max-lg:flex max-lg:flex-col">
         <NavBar />
         {isTablet ? null : <FloatingShapes />}
         <HeroSection />

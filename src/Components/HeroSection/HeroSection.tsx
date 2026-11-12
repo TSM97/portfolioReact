@@ -4,10 +4,10 @@ import Line from "./Line";
 function HeroSection() {
   return (
     <>
-      <section className="self-center pt-20 flex text-foreground  min-w-full  mx-auto flex-col min-h-[65vh] md:min-h-[70svh] gap-10 px-6">
+      <section className="self-center pt-20 flex text-foreground  min-w-full  mx-auto flex-col min-h-[65vh] md:min-h-[70svh] gap-10 px-6 max-lg:grow max-lg:justify-center max-lg:pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 pt-3 justify-between">
           <div className="md:col-span-7 sm:col-span-12 place-self-center">
-            <h1 className="font-extrabold text-2xl md:text-4xl lg:text-6xl pt-4">
+            <h1 className="font-extrabold text-3xl md:text-4xl lg:text-6xl pt-4">
               <span>Hello, I'm </span>
               <br />
               <span className="text-primary">
@@ -38,7 +38,7 @@ function HeroSection() {
           </div>
         </div>
       </section>
-      <section className="md:min-h-[10svh] min-w-screen">
+      <section className="min-h-[20svh] md:min-h-[10svh] min-w-screen">
         <Line />
       </section>
     </>

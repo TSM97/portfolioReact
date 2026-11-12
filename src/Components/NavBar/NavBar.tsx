@@ -14,7 +14,7 @@ export default function NavBar() {
   const { isTablet, isMobile } = useScreenSize();
   return (
     <>
-      <section className="grid grid-cols-2 lg:grid-cols-7 grid-rows-2 w-screen min-h-[15svh] gap-x-unit-lg max-w-[100dvw]">
+      <section className="grid grid-cols-[2fr_3fr] sm:grid-cols-2 lg:grid-cols-7 grid-rows-2 w-screen min-h-[15svh] gap-x-unit-lg max-w-[100dvw]">
         <section className="flex text-red col-span-1 row-span-2 md:pt-7 place-self-center">
           <LOGO
             className={`${
@@ -24,12 +24,12 @@ export default function NavBar() {
         </section>
 
         {isTablet ? (
-          <section className="text-center row-span-2 pt-3">
+          <section className="row-span-2 flex flex-wrap content-start justify-center gap-2 px-2 pt-3">
             <Button
               color="primary"
               variant="shadow"
               size={`${isTablet ? "sm" : "lg"}`}
-              className="font-semibold mr-2"
+              className="font-semibold"
               onClick={handleEmailButtonClick}
             >
               Hire me
@@ -41,11 +41,11 @@ export default function NavBar() {
               color="primary"
               variant="bordered"
               size={`${isTablet ? "sm" : "lg"}`}
-              className="font-semibold border-4 mt-2"
+              className="font-semibold border-4"
             >
               Download CV
             </Button>
-            <div className="flex justify-center pt-3">
+            <div className="flex w-full justify-center pt-1">
               <ThemeSwitcher />
             </div>
           </section>

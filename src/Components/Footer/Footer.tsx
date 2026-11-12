@@ -49,7 +49,7 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="py-8 text-center text-sm text-foreground-500">
+        <div className="pt-8 pb-24 sm:pb-8 text-center text-sm text-foreground-500">
           © {new Date().getFullYear()} - This is my Portfolio. That's all.
         </div>
       </footer>
