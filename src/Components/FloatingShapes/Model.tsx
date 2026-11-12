@@ -9,6 +9,9 @@ import { Color, type Mesh as ThreeMesh, type MeshStandardMaterial } from "three"
 
 const MODEL_URL = `${import.meta.env.BASE_URL}medias/untitled.glb`;
 
+// Average depth of the "</>" meshes in the model file
+const SYMBOL_Z = -150;
+
 const LIGHT_MODE_COLOR = "#45464c";
 
 type Mouse = { x: MotionValue<number>; y: MotionValue<number> };
@@ -36,13 +39,20 @@ export default function Model({ mouse, drag }: { mouse: Mouse; drag: Mouse }) {
 
   return (
     <Float>
-      <motion.group rotation-x={drag.x} rotation-y={drag.y}>
-        <Mesh node={nodes.center as ThreeMesh} mouse={mouse} multiplier={1.2} />
-        <Mesh node={nodes.Torus_2 as ThreeMesh} mouse={mouse} multiplier={2} />
-        <Mesh node={nodes.topTorus as ThreeMesh} mouse={mouse} multiplier={0} />
-        <Mesh node={nodes.bottomTorus as ThreeMesh} mouse={mouse} multiplier={0} />
-        <Mesh node={nodes.Torus as ThreeMesh} mouse={mouse} multiplier={2.5} />
-      </motion.group>
+      {/* The ring halves "(" and ")" stay put while dragging */}
+      <Mesh node={nodes.topTorus as ThreeMesh} mouse={mouse} multiplier={0} />
+      <Mesh node={nodes.bottomTorus as ThreeMesh} mouse={mouse} multiplier={0} />
+      {/* Only the "</>" symbol (chevrons + slash) follows the drag. It sits
+          around z = SYMBOL_Z, so rotate around that point, not the origin. */}
+      <group position={[0, 0, SYMBOL_Z]}>
+        <motion.group rotation-x={drag.x} rotation-y={drag.y}>
+          <group position={[0, 0, -SYMBOL_Z]}>
+            <Mesh node={nodes.center as ThreeMesh} mouse={mouse} multiplier={1.2} />
+            <Mesh node={nodes.Torus_2 as ThreeMesh} mouse={mouse} multiplier={2} />
+            <Mesh node={nodes.Torus as ThreeMesh} mouse={mouse} multiplier={2.5} />
+          </group>
+        </motion.group>
+      </group>
     </Float>
   );
 }
