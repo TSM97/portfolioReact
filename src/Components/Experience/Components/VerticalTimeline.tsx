@@ -5,6 +5,9 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 import { useTheme } from "next-themes";
+
+// Softer than pure black for light mode
+const LIGHT_DARK = "#33353a";
 import { SpinnerSvg } from "../../../svgs";
 import { motion } from "framer-motion";
 import { Tooltip } from "@nextui-org/react";
@@ -19,7 +22,7 @@ export default function VerticalTimelineComp() {
   return (
     <>
       <VerticalTimeline
-        lineColor={theme === "light" ? "#121212" : "#ec6554"}
+        lineColor={theme === "light" ? LIGHT_DARK : "#ec6554"}
         animate={!isMobile}
       >
         {experienceData &&
@@ -27,11 +30,11 @@ export default function VerticalTimelineComp() {
             return (
               <VerticalTimelineElement
                 key={el?.id}
-                className="vertical-timeline-element--work dark:text-black text-white mr-10 xl:mr-0"
+                className="vertical-timeline-element--work dark:text-black text-[#f1ece2] mr-10 xl:mr-0"
                 contentStyle={{
-                  background: theme === "light" ? "#121212" : "#ecedee",
+                  background: theme === "light" ? LIGHT_DARK : "#ecedee",
                   border: `1px solid ${
-                    theme === "light" ? "#121212" : "#ecedee"
+                    theme === "light" ? LIGHT_DARK : "#ecedee"
                   }`,
                   textAlign: "left",
                   padding: "1.3rem 2rem",
@@ -40,14 +43,14 @@ export default function VerticalTimelineComp() {
                   theme === "light"
                     ? isMobile
                       ? "text-[#ecedee]"
-                      : "text-[#121212]"
+                      : "text-[#33353a]"
                     : isMobile
                     ? "text-black"
                     : "text-white"
                 }
                 contentArrowStyle={{
                   borderRight: `7px solid  ${
-                    theme === "light" ? "#121212" : "#ecedee"
+                    theme === "light" ? LIGHT_DARK : "#ecedee"
                   }`,
                 }}
                 date={el?.date}

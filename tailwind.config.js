@@ -16,13 +16,16 @@ export default {
           layout: {}, // light theme layout tokens
           colors: {
             background: {
-              DEFAULT: '#ecedee',
+              DEFAULT: '#dedad1',
+            },
+            foreground: {
+              DEFAULT: '#2b2d31',
             },
             primary: {
-              DEFAULT: '#ec4e39',
+              DEFAULT: '#cf3320',
             },
             secondary: {
-              DEFAULT: '#ec4e39',
+              DEFAULT: '#cf3320',
             },
             // background: '#f0edf2'
           }, // light theme colors

@@ -9,7 +9,7 @@ import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import "./App.css";
 import { useAnimationControls } from "framer-motion";
-import UnderConstruction from "./Components/UnderConstruction";
+// import UnderConstruction from "./Components/UnderConstruction";
 import FloatingShapes from "./Components/FloatingShapes/FloatingShapes";
 import useScreenSize from "./hooks/useScreenSize";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       {transition && <Transition controls={controls} />}
-      <UnderConstruction />
+      {/* <UnderConstruction /> */}
       <section id="Header" className="h-[100svh]">
         <NavBar />
         {isTablet ? null : <FloatingShapes />}

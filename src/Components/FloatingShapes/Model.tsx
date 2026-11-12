@@ -1,16 +1,39 @@
+import { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useTheme } from "next-themes";
 import { Float } from "@react-three/drei";
 import { useTransform } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import type { MotionValue } from "framer-motion";
-import type { Mesh as ThreeMesh } from "three";
+import { Color, type Mesh as ThreeMesh, type MeshStandardMaterial } from "three";
 
 const MODEL_URL = `${import.meta.env.BASE_URL}medias/untitled.glb`;
+
+const LIGHT_MODE_COLOR = "#45464c";
 
 type Mouse = { x: MotionValue<number>; y: MotionValue<number> };
 
 export default function Model({ mouse }: { mouse: Mouse }) {
   const { nodes } = useGLTF(MODEL_URL);
+  const { resolvedTheme } = useTheme();
+
+  // The shapes are white, which disappears on the light background:
+  // tint them dark in light mode and restore the original color otherwise.
+  useEffect(() => {
+    Object.values(nodes).forEach((node) => {
+      const material = (node as ThreeMesh).material as
+        | MeshStandardMaterial
+        | undefined;
+      if (!material?.color) return;
+      material.userData.originalColor ??= material.color.clone();
+      material.color.set(
+        resolvedTheme === "light"
+          ? LIGHT_MODE_COLOR
+          : (material.userData.originalColor as Color)
+      );
+    });
+  }, [nodes, resolvedTheme]);
+
   return (
     <Float>
       <group>
