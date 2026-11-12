@@ -1,17 +1,10 @@
 import { footerDataSections, footerDataSocial } from "./data";
-import scrollTo from "../../utils/scrollTo";
-import { AnimationControls } from "framer-motion";
-import { useRef } from "react";
 
 export default function Footer({
-  controls,
-  setTransition,
+  onNavigate,
 }: {
-  controls: AnimationControls;
-  setTransition: React.Dispatch<React.SetStateAction<boolean>>;
+  onNavigate: (sectionId: string) => void;
 }) {
-  const isTransitioning = useRef(false);
-
   return (
     <div className=" pt-4 sm:pt-10 lg:pt-12">
       <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -21,24 +14,7 @@ export default function Footer({
               return (
                 <div
                   key={i}
-                  onClick={async () => {
-                    if (isTransitioning.current) return;
-                    isTransitioning.current = true;
-                    setTransition(true);
-                    setTimeout(() => {
-                      scrollTo(data.link);
-                    }, 60);
-                    await controls.start({
-                      y: "-600vh",
-                      transition: { duration: 1 },
-                    });
-                    await controls.start({
-                      y: "0",
-                      transition: { duration: 0 },
-                    });
-                    setTransition(false);
-                    isTransitioning.current = false;
-                  }}
+                  onClick={() => onNavigate(data.link)}
                   className="text-foreground text-xl transition duration-100 hover:text-primary hover:cursor-pointer"
                 >
                   {data.title}
